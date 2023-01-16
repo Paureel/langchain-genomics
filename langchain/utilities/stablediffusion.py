@@ -36,6 +36,7 @@ class StablediffusionAPIWrapper(BaseModel):
 
         try:
             import wolframalpha
+            print("Importing stablediffusion.")
 
         except ImportError:
             raise ImportError(

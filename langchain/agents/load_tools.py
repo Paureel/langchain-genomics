@@ -51,7 +51,7 @@ def _get_stablediffusion() -> Tool:
     return Tool(
         "Stablediffusion",
         StablediffusionAPIWrapper().run,
-        "A wrapper around Stablediffusion. Useful for when you need to generate pictures or imagine something.",
+        "A wrapper around Stablediffusion. Useful for when you need to generate pictures or imagine something. Input should be the object what needs to be generated.",
     )
 
 
