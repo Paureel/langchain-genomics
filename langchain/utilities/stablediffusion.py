@@ -7,7 +7,7 @@ from langchain.utils import get_from_dict_or_env
 
 
 class StablediffusionAPIWrapper(BaseModel):
-    """Wrapper for Wolfram Alpha.
+    """Wrapper for Stable Diffusion.
 
     Docs for using:
 
@@ -60,10 +60,10 @@ class StablediffusionAPIWrapper(BaseModel):
             assumption = res + " Assumption."
             answer = res
         except StopIteration:
-            return "Wolfram Alpha wasn't able to answer it"
+            return "Stablediffusion wasn't able to answer it"
 
         if answer is None or answer == "":
             # We don't want to return the assumption alone if answer is empty
-            return "No good Wolfram Alpha Result was found"
+            return "No good Stablediffusion Result was found"
         else:
             return f"Assumption: {assumption} \nAnswer: {answer}"
