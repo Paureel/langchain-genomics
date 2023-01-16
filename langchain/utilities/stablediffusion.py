@@ -4,6 +4,8 @@ from typing import Any, Dict, Optional
 from pydantic import BaseModel, Extra, root_validator
 
 from langchain.utils import get_from_dict_or_env
+from diffusers import StableDiffusionPipeline
+
 
 
 class StablediffusionAPIWrapper(BaseModel):
@@ -54,11 +56,16 @@ class StablediffusionAPIWrapper(BaseModel):
         """Run query through WolframAlpha and parse result."""
         #res = self.wolfram_client.query(query)
         res = "Always return this sentence."
+        pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
         try:
             #assumption = next(res.pods).text
             #answer = next(res.results).text
-            assumption = res + " Assumption."
-            answer = res
+            prompt = query
+
+            image = pipe(prompt).images[0]
+            image.save(f"output.png")
+            answer = "Image saved!"
+            assumption = "Thinking..."
         except StopIteration:
             return "Stablediffusion wasn't able to answer it"
 
