@@ -46,6 +46,13 @@ def _get_wolfram_alpha() -> Tool:
         WolframAlphaAPIWrapper().run,
         "A wrapper around Wolfram Alpha. Useful for when you need to answer questions about Math, Science, Technology, Culture, Society and Everyday Life. Input should be a search query.",
     )
+    
+def _get_stablediffusion() -> Tool:
+    return Tool(
+        "Stablediffusion",
+        StablediffusionAPIWrapper().run,
+        "A wrapper around Stablediffusion. Useful for when you need to generate pictures or imagine something.",
+    )
 
 
 def _get_requests() -> Tool:
@@ -71,6 +78,7 @@ _BASE_TOOLS = {
     "terminal": _get_terminal,
     "google-search": _get_google_search,
     "wolfram-alpha": _get_wolfram_alpha,
+    "stablediffusion": _get_stablediffusion,
 }
 
 
