@@ -57,7 +57,7 @@ def _get_ESM2() -> Tool:
     return Tool(
         "ESM2",
         ESM2APIWrapper().run,
-        "A wrapper around ESM2. Useful for when you need to generate protein embeddings given a protein sequence. Input should be a protein sequence consisting of amino acids.",
+        "A wrapper around ESM2. Useful for when you need to generate protein embeddings given a protein sequence. Input should be a protein sequence consisting of amino acids. The output is an embedding vector, which should be returned as answer.",
     )
 
 def _get_requests() -> Tool:
