@@ -53,7 +53,12 @@ def _get_stablediffusion() -> Tool:
         StablediffusionAPIWrapper().run,
         "A wrapper around Stablediffusion. Useful for when you need to generate pictures or imagine something. Input should be the object what needs to be generated.",
     )
-
+def _get_ESM2() -> Tool:
+    return Tool(
+        "ESM2",
+        ESM2APIWrapper().run,
+        "A wrapper around ESM2. Useful for when you need to generate protein embeddings given a protein sequence. Input should be a protein sequence consisting of amino acids.",
+    )
 
 def _get_requests() -> Tool:
     return Tool(
@@ -79,6 +84,7 @@ _BASE_TOOLS = {
     "google-search": _get_google_search,
     "wolfram-alpha": _get_wolfram_alpha,
     "stablediffusion": _get_stablediffusion,
+    "ESM2": _get_ESM2,
 }
 
 
