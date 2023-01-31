@@ -150,14 +150,13 @@ class TWITTERAPIWrapper(BaseModel):
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_key, access_secret)
         api = tweepy.API(auth)
-        try:
+        
             
-            answer = scrape(query, "2023-01--20", 50)
+        answer = scrape(query, "2023-01--20", 50)
 
         
             
-        except:
-            return "Twitter wasn't able to answer it"
+        
 
         if answer is None or answer == "":
             # We don't want to return the assumption alone if answer is empty
