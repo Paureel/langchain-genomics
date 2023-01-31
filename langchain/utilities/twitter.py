@@ -85,7 +85,7 @@ class TWITTERAPIWrapper(BaseModel):
         
         words = query
         date_since ="2023-01--20", 
-        numtweet =  50
+        numtweet =  20
         alltweets = {}
             # Creating DataFrame using pandas
         db = pd.DataFrame(columns=['username',
