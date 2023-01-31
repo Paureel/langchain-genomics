@@ -59,6 +59,13 @@ def _get_ESM2() -> Tool:
         ESM2APIWrapper().run,
         "A wrapper around ESM2. Useful for when you need to generate protein embeddings given a protein sequence. Input should be a protein sequence consisting of amino acids. The output is an embedding vector, which should be returned as answer.",
     )
+    
+def _get_TWITTER() -> Tool:
+    return Tool(
+        "TWITTER",
+        TWITTERAPIWrapper().run,
+        "A wrapper around TWITTER. Useful for when you need to retrieve tweets from Twitter. Input should be word describing the topic which should be searched on Twitter.",
+    )
 
 def _get_requests() -> Tool:
     return Tool(
@@ -85,6 +92,7 @@ _BASE_TOOLS = {
     "wolfram-alpha": _get_wolfram_alpha,
     "stablediffusion": _get_stablediffusion,
     "ESM2": _get_ESM2,
+    "TWITTER": _get_TWITTER,
 }
 
 
