@@ -12,7 +12,7 @@ import pandas as pd
 import tweepy
 
 class TWITTERAPIWrapper(BaseModel):
-    """Wrapper for ESM2.
+    """Wrapper for Twitter.
     """
 
     wolfram_client: Any  #: :meta private:

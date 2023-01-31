@@ -16,6 +16,7 @@ from langchain.utilities.google_search import GoogleSearchAPIWrapper
 from langchain.utilities.wolfram_alpha import WolframAlphaAPIWrapper
 from langchain.utilities.stablediffusion import StablediffusionAPIWrapper
 from langchain.utilities.esm2 import ESM2APIWrapper
+from langchain.utilities.twitter import TWITTERAPIWrapper
 def _get_python_repl() -> Tool:
     return Tool(
         "Python REPL",
