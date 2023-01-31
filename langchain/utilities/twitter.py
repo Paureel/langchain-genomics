@@ -60,9 +60,7 @@ class TWITTERAPIWrapper(BaseModel):
 
  
 # function to display data of each tweet
-    def printtweetdata(n, ith_tweet):
-            
-            return(ith_tweet[7])
+   
      
      
     # function to perform data extraction
@@ -132,7 +130,7 @@ class TWITTERAPIWrapper(BaseModel):
      
                     # Function call to print tweet data on screen
                     
-                    alltweets[i] = printtweetdata(i, ith_tweet)
+                    alltweets[i] = ith_tweet[7]
                     i = i+1
             return(alltweets)
 
@@ -152,7 +150,7 @@ class TWITTERAPIWrapper(BaseModel):
         api = tweepy.API(auth)
         
             
-        answer = scrape(query, "2023-01--20", 50)
+        answer = self.scrape(query, "2023-01--20", 50)
 
         
             
